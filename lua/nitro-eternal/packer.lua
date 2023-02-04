@@ -12,19 +12,26 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    use({
-        'rose-pine/neovim',
-        as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
-    })
+
+    -- different backgrounds
+    use {'rose-pine/neovim', as = 'rose-pine' }
+
+    use { 'sainnhe/everforest', as = 'everforest' }
+
+    use { 'Everblush/nvim', as = 'everblush' }
+    
+    use {'AlexvZyl/nordic.nvim', as = 'nordic' }
+    -- end
+
     use ({
         'nvim-treesitter/nvim-treesitter', 
         {run = ':TSUpdate'}
     })
+
     use {'ThePrimeagen/harpoon'}
+
     use {'mbbill/undotree'}
+    
     use {'tpope/vim-fugitive'}
 
     -- Installing LSP Server
@@ -75,7 +82,25 @@ return require('packer').startup(function(use)
     }
 
     use {'ThePrimeagen/vim-be-good'}
+    
     use {'j-hui/fidget.nvim'}
+
+    use {'andweeb/presence.nvim'}
+
+    use { 'folke/twilight.nvim'}
+
+    use { 'iamcco/markdown-preview.nvim' }
+
+    use { 'stevearc/dressing.nvim' }
+
+    use {
+        'phaazon/mind.nvim',
+        branch = 'v2.2',
+        requires = { 'nvim-lua/plenary.nvim' }
+    }
+    use { 'rcarriga/nvim-notify' }
 end)
+
+
 
 
